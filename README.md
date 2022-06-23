@@ -1,8 +1,8 @@
-# IMC CALCULATOR
+# BMI CALCULATOR
 
 **Author**: Tiago Rodrigues Sousa
 
-A app that calculate a IMC from a person. This project introduce me to React Native.
+A app that calculate a BMI from a person. This project introduce me to React Native.
 
 **Technologies used:**
 - Node JS
