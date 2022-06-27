@@ -12,5 +12,7 @@ A app that calculate a BMI from a person. This project introduce me to React Nat
 **Devlog**
 - Jun 22, 2022 - Added blank template created from Expo.
 
-- Jun 23, 2023 - Added Form, Title and OperationResult components.
+- Jun 23, 2022 - Added Form, Title and OperationResult components.
+
+- Jun 26, 2022 - Added logic to calculate BMI.
 
