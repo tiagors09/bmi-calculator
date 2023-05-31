@@ -6,24 +6,22 @@ const weight = ref<number>(0)
 
 const bmi = computed<string>(() => {
   return height.value != 0 && weight.value != 0
-    ? `${(weight.value / Math.pow(height.value, 2)).toFixed(2)} kg/m²`
+    ? `Your BMI is ${(weight.value / Math.pow(height.value, 2)).toFixed(2)} kg/m²`
     : 'Type your height and weight'
 })
 </script>
 
 <template>
   <main>
-    <div class="content">
-      <h1>BMI Calculator</h1>
-      <form>
-        <label for="height">Height</label>
-        <input type="number" name="height" id="height" v-model="height" min="0">
+    <h1>BMI Calculator</h1>
+    <form>
+      <label for="height">Height</label>
+      <input type="number" name="height" id="height" v-model="height" min="0">
 
-        <label for="weight">Weight</label>
-        <input type="number" name="weight" id="weight" v-model="weight" min="0">
-      </form>
-      <span>{{ bmi }}</span>
-    </div>
+      <label for="weight">Weight</label>
+      <input type="number" name="weight" id="weight" v-model="weight" min="0">
+    </form>
+    <span>{{ bmi }}</span>
   </main>
 </template>
 
@@ -33,7 +31,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 20vw;
+  font-size: 1.5rem;
 }
 
 h1 {
@@ -65,6 +63,7 @@ input[type="number"] {
   appearance: textfield;
   background-color: var(--input-bg);
   color: var(--input-text);
+  font-size: 1.5rem;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
