@@ -15,34 +15,13 @@ const bmi = computed<string>(() => {
   <main>
     <div class="content">
       <h1>BMI Calculator</h1>
-      <section>
-        <article>
-          <p>
-            BMI is the acronym for Body Mass Index, a parameter adopted by the World Health Organization to calculate the
-            ideal weight of each person.
-          </p>
-
-          <p>
-            The index is calculated as follows: the patient's weight is divided by their height squared. An individual is
-            said to have normal weight when the BMI result is between 18.5 and 24.9.
-          </p>
-
-          <p>
-            Want to find out your BMI? Enter your weight and height in the fields below and compare with the indexes in
-            the
-            table. Important: follow the examples and use dots as separators.
-          </p>
-        </article>
-      </section>
-
       <form>
         <label for="height">Height</label>
-        <input type="number" name="height" id="height" v-model="height">
+        <input type="number" name="height" id="height" v-model="height" min="0">
 
         <label for="weight">Weight</label>
-        <input type="number" name="weight" id="weight" v-model="weight">
+        <input type="number" name="weight" id="weight" v-model="weight" min="0">
       </form>
-
       <span>{{ bmi }}</span>
     </div>
   </main>
@@ -57,6 +36,10 @@ main {
   width: 20vw;
 }
 
+h1 {
+  color: var(--main-title);
+}
+
 p {
   text-align: justify;
 }
@@ -64,18 +47,45 @@ p {
 form {
   display: flex;
   flex-direction: column;
+  margin: 1em;
+  padding: 1em;
+  border-radius: .5em;
+  background-color: var(--form-background);
 }
 
 label {
   margin: 0 0 .25em 0;
+  color: var(--input-label);
 }
 
 input[type="number"] {
   margin: 0 0 1em 0;
+  border: none;
+  border-bottom: solid var(--input-border) 1px;
+  appearance: textfield;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]:focus {
+  outline: none;
 }
 
 span {
   display: flex;
   align-self: center;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--span-bg);
+  color: var(--span-txt);
+  padding: 1em;
+  border-radius: 100rem;
+  font-weight: bold;
 }
 </style>
